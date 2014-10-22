@@ -33,6 +33,9 @@ Bundle 'tpope/vim-fugitive'
 " enable matchit plugin for better % support in ruby files
 runtime macros/matchit.vim
 
+"Fix clipboard issue in tmux
+set clipboard=unnamed
+
 "Set color scheme
 set background=light
 
