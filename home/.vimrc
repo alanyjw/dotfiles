@@ -58,6 +58,9 @@ runtime macros/matchit.vim
 "Fix clipboard issue in tmux
 set clipboard=unnamed
 
+"Fix backspace
+set backspace=indent,eol,start
+
 "Set color scheme
 set background=light
 
