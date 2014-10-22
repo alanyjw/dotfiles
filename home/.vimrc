@@ -19,6 +19,28 @@ Bundle 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'mileszs/ack.vim.git'
 
+" Easy RSpec and Mocha running
+Bundle 'geekjuice/vim-spec'
+let g:rspec_command = 'call VimuxRunCommand("rspec {spec}\n")'
+let g:mocha_coffee_command = 'call VimuxRunCommand("NODE_ENV=test mocha --compilers coffee:coffee-script/register {spec}\n")'
+nmap <Leader>rf :wa<CR> :call RunCurrentSpecFile()<CR>
+nmap <Leader>rn :wa<CR>:call RunNearestSpec()<CR>
+nmap <Leader>rl :wa<CR> :call RunLastSpec()<CR>
+nmap <C-\>:wa<CR> :call RunLastSpec()<CR>
+nmap <Leader>ra :wa<CR> :call RunAllSpecs()<CR>
+
+" Tmux integration
+Bundle 'benmills/vimux'
+nmap <Leader>vi :VimuxInspectRunner<CR>
+function! VimuxZoomRunner()
+  call VimuxInspectRunner()
+  call system("tmux resize-pane -Z")
+endfunction
+nmap <Leader>vv :call VimuxZoomRunner()<CR>
+
+" Tmux
+Bundle 'christoomey/vim-tmux-navigator'
+
 ""Language-related
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'pangloss/vim-javascript'
@@ -27,8 +49,6 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-fugitive'
-"""This bundle causes file loads to be super slow
-"Bundle "bakis2011/vim-css-color.git"
 
 " enable matchit plugin for better % support in ruby files
 runtime macros/matchit.vim
@@ -133,6 +153,16 @@ set statusline+=%y      "filetype
 set statusline+=%=      "left/right separator
 set statusline+=[%c,%l] "cursor column
 set statusline+=\ %P    "percent through file
+
+" Turn on mouse
+set mouse=a
+
+" Fix mouse in vim and tmux
+" via: http://superuser.com/questions/549930/cant-resize-vim-splits-inside-tmux
+if &term =~ '^screen'
+  " tmux knows the extended mouse mode
+  set ttymouse=xterm2
+endif
 
 "Key mappings
 ""Pain is good
