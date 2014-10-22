@@ -26,6 +26,7 @@ Bundle "digitaltoad/vim-jade.git"
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-fugitive'
 """This bundle causes file loads to be super slow
 "Bundle "bakis2011/vim-css-color.git"
 
