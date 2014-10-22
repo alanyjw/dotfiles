@@ -18,6 +18,8 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/syntastic.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'mileszs/ack.vim.git'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'tomtom/tcomment_vim'
 
 " Easy RSpec and Mocha running
 Bundle 'geekjuice/vim-spec'
