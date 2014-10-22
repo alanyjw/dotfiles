@@ -143,9 +143,6 @@ inoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
-inoremap <BS> <nop>
-inoremap <Del> <nop>
-
 ""Toggle cursor line and column
 nnoremap <silent><Leader>c :set cursorline! cursorcolumn!<CR>
 
